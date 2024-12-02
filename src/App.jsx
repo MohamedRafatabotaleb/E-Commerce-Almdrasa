@@ -1,15 +1,26 @@
-import FlashSaleSection from "./FlashSaleSection";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+import FlashSaleSection from "./components/ProductSection";
 import { dataList } from "./data";
+import Home from "./pages/Home";
+import Layout from "./pages/Layout";
+import NoPage from "./pages/NoPage";
 function App() {
   return (
-    <>
-      <FlashSaleSection items={dataList} header="toadys" title="Flash sales" />
-      <FlashSaleSection
-        items={dataList}
-        header="this month"
-        title="Best Selling Products"
-      />
-    </>
+    <BrowserRouter
+      future={{
+        v7_relativeSplatPath: true,
+        v7_startTransition: true,
+      }}
+    >
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          {/* <Route path=":article" element={<Article />} /> */}
+          <Route path="*" element={<NoPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

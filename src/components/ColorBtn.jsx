@@ -18,7 +18,7 @@ function ColorBtn() {
         <div
           className={`h-full w-full ${
             activeButton === 1 ? "h-3 w-3" : "h-5 w-5"
-          } rounded-full bg-blue-500`}
+          } bg-red rounded-full`}
         ></div>
       </button>
       <button
@@ -30,7 +30,7 @@ function ColorBtn() {
         <div
           className={`h-full w-full ${
             activeButton === 2 ? "h-3 w-3" : "h-5 w-5"
-          } rounded-full bg-red-500`}
+          } bg-dark-gray-blue rounded-full`}
         ></div>
       </button>
     </div>
