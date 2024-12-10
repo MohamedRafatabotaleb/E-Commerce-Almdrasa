@@ -1,8 +1,7 @@
 import { cva } from "class-variance-authority";
-import { Children } from "react";
 
 const button = cva(
-  "h-[56px] rounded-[4px]  px-[48px] py-[16px] font-poppins text-center text-font-lg-500 ",
+  " rounded-[4px] px-[48px] font-poppins text-center text-font-lg-500 ",
   {
     variants: {
       intent: {
@@ -12,6 +11,7 @@ const button = cva(
           "border-transparent",
           "text-color-text-1",
           "hover:bg-color-button-hover",
+          "py-[16px]",
         ],
         // **or**
         // primary: "bg-blue-500 text-white border-transparent hover:bg-blue-600",
@@ -20,6 +20,7 @@ const button = cva(
           "text-black",
           "border-gray-400",
           "hover:text-color-text-2",
+          "py-[16px]",
         ],
         third: [
           "bg-color-button-2",
@@ -27,6 +28,16 @@ const button = cva(
           "py-[10px]",
           "text-color-text-1",
           "hover:bg-color-button-hover",
+        ],
+        CPhone: [
+          "w-[170px]",
+          "h-[145px]",
+          "border",
+          "border-color-star-gray",
+          "text-black",
+          "hover:bg-color-button-2",
+          "hover:text-white",
+          "group",
         ],
       },
       size: {
@@ -47,11 +58,26 @@ const button = cva(
       intent: "primary",
       size: "medium",
     },
-  },
+  }
 );
 
-function Button({ intent, textBTN }) {
-  return <button className={button({ intent })}>{textBTN}</button>;
+function Button({ intent, textBTN, textCPhone, img }) {
+  return (
+    <button className={button({ intent })}>
+      {intent === "CPhone" ? (
+        <div className="flex flex-col items-center justify-center">
+          <img
+            src={img}
+            alt="image"
+            className="group-hover:invert group-hover:filter"
+          />
+          <p>{textCPhone}</p>
+        </div>
+      ) : (
+        textBTN
+      )}
+    </button>
+  );
 }
 
 export default Button;

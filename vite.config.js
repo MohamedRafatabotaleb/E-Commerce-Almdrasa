@@ -11,6 +11,7 @@ export default defineConfig({
       "@components": "/src/components",
       "@assets": "/src/assets",
       "@data": "/data",
+      "@CategoryPhone": "/src/assets/CategoryPhone",
     },
     extensions: [".js", ".jsx", ".ts", ".tsx"],
   },

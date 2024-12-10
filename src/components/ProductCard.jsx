@@ -3,7 +3,7 @@ import { FaRegHeart } from "react-icons/fa";
 import { FiEye } from "react-icons/fi";
 import ColorBtn from "./ColorBtn";
 import { TiStarFullOutline } from "react-icons/ti";
-function ProductCard({ item, sectionTitle }) {
+function ProductCard({ item }) {
   return (
     <div className="border-slate-950 relative mx-auto w-[270px] rounded-lg border shadow-lg">
       <div className="flex h-[250px] items-center justify-center bg-[#F5F5F5]">
@@ -39,9 +39,9 @@ function ProductCard({ item, sectionTitle }) {
         </div>
       </div>
 
-      <div className="text-font-lg-500 mt-4 h-[85px] font-poppins">
+      <div className="mt-4 h-[85px] font-poppins text-font-lg-500">
         {/* Title */}
-        <h3 className="">{item.title}</h3>
+        <h3 className="text-left">{item.title}</h3>
 
         {/* Price */}
         <div
@@ -61,7 +61,7 @@ function ProductCard({ item, sectionTitle }) {
           >
             {/* Star Gray*/}
             <div className="flex space-x-1">
-              {Array(5) // وضع 5 نجوم رمادية
+              {Array(5) // 5 Star
                 .fill(0)
                 .map((_, i) => (
                   <span key={`gray-${i}`} className="text-color-star-gray">

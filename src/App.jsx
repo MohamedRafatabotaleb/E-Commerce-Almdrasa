@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import FlashSaleSection from "./components/ProductSection";
-import { dataList } from "./data";
+import { dataList } from "./data/data";
 import Home from "./pages/Home";
 import Layout from "./pages/Layout";
 import NoPage from "./pages/NoPage";
